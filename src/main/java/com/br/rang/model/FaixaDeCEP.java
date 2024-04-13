@@ -1,14 +1,16 @@
-package com.br.rang;
+package com.br.rang.model;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+
 
 @Entity
 @Table(name = "faixa_cep")
@@ -25,7 +27,7 @@ public class FaixaDeCEP implements Serializable {
 	
 	private String cepFim;
 	
-	@OneToMany
+	@OneToOne
 	private UnidadeDeSaude unidadeDeSaude;
 
 	public Long getId() {
