@@ -2,11 +2,12 @@ package com.br.rang.service;
 
 import java.io.Serializable;
 
+import javax.inject.Inject;
+
 import com.br.rang.model.UnidadeDeSaude;
 import com.br.rang.repository.UnidadeSaudeRepository;
 import com.br.rang.util.Transacional;
 
-import jakarta.inject.Inject;
 
 public class UnidadeDeSaudeService implements Serializable{
 

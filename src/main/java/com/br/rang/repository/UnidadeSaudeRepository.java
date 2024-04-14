@@ -3,11 +3,10 @@ package com.br.rang.repository;
 import java.io.Serializable;
 import java.util.List;
 
-
+import javax.inject.Inject;
 
 import com.br.rang.model.UnidadeDeSaude;
 
-import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 

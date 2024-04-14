@@ -1,0 +1,8 @@
+/media/pagani/HD/eclipseubuntu/projeto/src/main/java/com/br/rang/model/FaixaDeCEP.java
+/media/pagani/HD/eclipseubuntu/projeto/src/main/java/com/br/rang/model/UnidadeDeSaude.java
+/media/pagani/HD/eclipseubuntu/projeto/src/main/java/com/br/rang/repository/UnidadeSaudeRepository.java
+/media/pagani/HD/eclipseubuntu/projeto/src/main/java/com/br/rang/repository/main.java
+/media/pagani/HD/eclipseubuntu/projeto/src/main/java/com/br/rang/service/UnidadeDeSaudeService.java
+/media/pagani/HD/eclipseubuntu/projeto/src/main/java/com/br/rang/util/EntityManagerProduce.java
+/media/pagani/HD/eclipseubuntu/projeto/src/main/java/com/br/rang/util/Transacional.java
+/media/pagani/HD/eclipseubuntu/projeto/src/main/java/com/br/rang/util/TransacionalInterceptor.java

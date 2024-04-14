@@ -1,0 +1,8 @@
+com/br/rang/repository/main.class
+com/br/rang/util/EntityManagerProduce.class
+com/br/rang/model/FaixaDeCEP.class
+com/br/rang/util/Transacional.class
+com/br/rang/util/TransacionalInterceptor.class
+com/br/rang/repository/UnidadeSaudeRepository.class
+com/br/rang/service/UnidadeDeSaudeService.class
+com/br/rang/model/UnidadeDeSaude.class
