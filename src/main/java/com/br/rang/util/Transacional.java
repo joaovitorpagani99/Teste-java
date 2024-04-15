@@ -7,10 +7,9 @@ import java.lang.annotation.Target;
 
 import javax.interceptor.InterceptorBinding;
 
-
-@Target({ElementType.METHOD, ElementType.TYPE})
+@Target({ ElementType.METHOD, ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @InterceptorBinding
 public @interface Transacional {
-	
+
 }

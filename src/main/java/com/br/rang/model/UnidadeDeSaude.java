@@ -24,6 +24,10 @@ public class UnidadeDeSaude implements Serializable {
 	private String cnes;
 
 	private String nomeUnidadeSaude;
+	
+	private String cepInicial;
+	
+	private String cepFim;
 
 	public Long getId() {
 		return id;
@@ -49,9 +53,25 @@ public class UnidadeDeSaude implements Serializable {
 		this.nomeUnidadeSaude = nomeUnidadeSaude;
 	}
 
+	public String getCepInicial() {
+		return cepInicial;
+	}
+
+	public void setCepInicial(String cepInicial) {
+		this.cepInicial = cepInicial;
+	}
+
+	public String getCepFim() {
+		return cepFim;
+	}
+
+	public void setCepFim(String cepFim) {
+		this.cepFim = cepFim;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(cnes, id, nomeUnidadeSaude);
+		return Objects.hash(cepFim, cepInicial, cnes, id, nomeUnidadeSaude);
 	}
 
 	@Override
@@ -63,13 +83,16 @@ public class UnidadeDeSaude implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		UnidadeDeSaude other = (UnidadeDeSaude) obj;
-		return Objects.equals(cnes, other.cnes) && Objects.equals(id, other.id)
+		return Objects.equals(cepFim, other.cepFim) && Objects.equals(cepInicial, other.cepInicial)
+				&& Objects.equals(cnes, other.cnes) && Objects.equals(id, other.id)
 				&& Objects.equals(nomeUnidadeSaude, other.nomeUnidadeSaude);
 	}
 
 	@Override
 	public String toString() {
-		return "UnidadeDeSaude [id=" + id + "]";
+		return "UnidadeDeSaude [id=" + id + ", cnes=" + cnes + ", nomeUnidadeSaude=" + nomeUnidadeSaude
+				+ ", cepInicial=" + cepInicial + ", cepFim=" + cepFim + "]";
 	}
 
+	
 }
