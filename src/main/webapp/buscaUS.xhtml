@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3c.org/1999/xhtml"
-        xmlns:h="http://java.sun.com/jsf/html"
-        xmlns:p="http://primefaces.org/ui"
-        xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Busca de Unidade de Saúde por CEP</title>
@@ -17,14 +17,24 @@
 	<div id="conteudo">
 		<h2>Informe o CEP para encontrar a unidade de saúde:</h2>
 		<h:form>
-			<h:panelGrid columns="2">
+			<p:growl id="messages" life="2000" />
+			<h:panelGrid columns="2" cellpadding="7">
 				<p:outputLabel for="cep" value="CEP:" />
-				<p:inputText id="cep" value="#{buscaUnidadeSaudeBean.cep}" required="true" />
+				<p:inputText id="cep" value="#{unidadeDeSaudeBean.cep}"
+					required="true" />
 
-				<p:commandButton value="Buscar" actionListener="#{buscaUnidadeSaudeBean.buscar}" />
+				<p:commandButton value="Buscar" icon="fa fa-search"
+					actionListener="#{unidadeDeSaudeBean.buscarUnidadeSaudePorCEP}"
+					update="@form" />
+
+				<h:outputText
+					value="Nome da Unidade de Saúde: #{unidadeDeSaudeBean.unidadeDeSaude.nomeUnidadeSaude}" />
+
 			</h:panelGrid>
 		</h:form>
-		<h:outputText value="#{buscaUnidadeSaudeBean.resultado}" rendered="#{not empty buscaUnidadeSaudeBean.resultado}" />
+
+		<h:link outcome="cadastroUS.xhtml"
+			value="Ir para a página de cadastro" />
 	</div>
 
 	<footer> Rang: teste prático para desenvolvedor full stack </footer>
