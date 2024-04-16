@@ -1,5 +1,5 @@
 h1 {
-    text-align: center;
+	text-align: center;
 }
 
 .card {
@@ -14,6 +14,20 @@ h1 {
 	align-items: center;
 	justify-content: center;
 	margin: 0 auto;
+}
+
+div {
+	margin-top: 10px;
+}
+
+.link {
+	color: #0000FF; 
+	text-decoration: none;
+}
+
+.link:hover {
+    color: #FF00FF; /* Cor do texto */
+    text-decoration: underline; /* Adiciona o sublinhado */
 }
 
 footer {

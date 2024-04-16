@@ -27,14 +27,18 @@
 					actionListener="#{unidadeDeSaudeBean.buscarUnidadeSaudePorCEP}"
 					update="@form" />
 
-				<h:outputText
-					value="Nome da Unidade de Saúde: #{unidadeDeSaudeBean.unidadeDeSaude.nomeUnidadeSaude}" />
+				<div>
+					<h:outputText
+						value="Nome da Unidade de Saúde: #{unidadeDeSaudeBean.unidadeDeSaude.nomeUnidadeSaude}" />
+				</div>
 
 			</h:panelGrid>
 		</h:form>
 
-		<h:link outcome="cadastroUS.xhtml"
-			value="Ir para a página de cadastro" />
+		<div>
+			<h:link outcome="cadastroUS.xhtml"
+				value="Ir para a página de cadastro" class="link" />
+		</div>
 	</div>
 
 	<footer> Rang: teste prático para desenvolvedor full stack </footer>
