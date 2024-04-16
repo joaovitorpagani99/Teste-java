@@ -31,7 +31,7 @@ public class UnidadeSaudeRepository implements Serializable {
 	public UnidadeDeSaude save(UnidadeDeSaude unidadeDeSaude) {
 
 		UnidadeDeSaude object = manager.merge(unidadeDeSaude);
-		
+
 		if (object != null) {
 			return unidadeDeSaude;
 		} else {
@@ -60,6 +60,20 @@ public class UnidadeSaudeRepository implements Serializable {
 					return unidade;
 				}
 			}
+		}
+
+		return null;
+	}
+
+	public UnidadeDeSaude buscarUnidadeSaudePorCNES(String cnes) {
+		TypedQuery<UnidadeDeSaude> query = manager.createQuery("SELECT u FROM UnidadeDeSaude u WHERE u.cnes = :cnes",
+				UnidadeDeSaude.class);
+		query.setParameter("cnes", cnes);
+
+		List<UnidadeDeSaude> resultados = query.getResultList();
+
+		if (!resultados.isEmpty()) {
+			return resultados.get(0);
 		}
 
 		return null;

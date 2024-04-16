@@ -21,13 +21,28 @@ public class UnidadeDeSaudeService implements Serializable {
 
 	@Transacional
 	public void save(UnidadeDeSaude unidadeDeSaude) {
+		// Verificar se o CNES já existe
+		UnidadeDeSaude unidadeExistente = repository.buscarUnidadeSaudePorCNES(unidadeDeSaude.getCnes());
+		if (unidadeExistente != null) {
+			facesMessages.info("Erro ao salvar. CNES já existe.");
+			return;
+		}
+
+		// Verificar se a faixa de CEP se sobrepõe a de outra unidade
+		boolean cepSobreposto = repository.verificaFaixaCep(Integer.parseInt(unidadeDeSaude.getCepInicial()),
+				Integer.parseInt(unidadeDeSaude.getCepFim()));
+		if (cepSobreposto) {
+			facesMessages.info("Erro ao salvar. Faixa de CEP se sobrepõe a de outra unidade.");
+			return;
+		}
+
+		// Se passar nas verificações, salvar a unidade de saúde
 		UnidadeDeSaude object = repository.save(unidadeDeSaude);
 		if (object != null) {
 			facesMessages.info("Salvo com sucesso.");
 		} else {
 			facesMessages.info("Erro ao salvar.");
 		}
-
 	}
 
 	@Transacional
